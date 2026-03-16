@@ -1,0 +1,17 @@
+{
+  "name": "xbrz",
+  "version": "1.0.0",
+  "descript": "xBRZ - Scale by rules - high quality pixel art upscaling by Zenju",
+  "main": "lib.js",
+  "keywords": [
+    "xbrz",
+    "pixel",
+    "upscale"
+  ],
+  "author": "Jimb Esser (https://github.com/Jimbly)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimbly/xbrz-js.git"
+  },
+  "license": "GPL3"
+}
