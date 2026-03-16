@@ -62,7 +62,7 @@ let dst = new Uint32Array(3*scale * 3*scale);
 xbrzScale(scale, src, dst, 3, 3, xbrzColorFormat.argb, config);
 ```
 
-See [test/test.js] for an example including reading and writing from a PNG file.
+See [test/test.js](test/test.js) for an example including reading and writing from a PNG file.
 
 ## Links
 
