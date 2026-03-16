@@ -4,7 +4,7 @@ xBRZ JavaScript version
 xBRZ: "Scale by rules" - high quality pixel art upscaling by Zenju
 
 Notes
-* Original code is GPL3 licensed, the same license apply here
+* Original code is GPL3 licensed, the same license may apply here
 * Currently updated to xBRZ v1.9
 * Some code semi-automatically converted to JavaScript by Codex (AI)
 * Only tested with `xbrzColorFormat.argb` (expects in-memory byte order of `R, G, B, A` or `B, G, R, A`)
