@@ -1,4 +1,5 @@
-test
+test/
 src/xBRZ_*/*.cpp
 src/xBRZ_*/*.h
 src/xBRZ_*/Changelog.txt
+.github/
