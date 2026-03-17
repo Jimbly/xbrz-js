@@ -1,7 +1,7 @@
 {
   "name": "xbrz-js",
   "version": "1.9.0",
-  "descript": "xBRZ - Scale by rules - pure JS implementation of high quality pixel art upscaling by Zenju",
+  "description": "xBRZ - Scale by rules - pure JS implementation of high quality pixel art upscaling by Zenju",
   "main": "lib.js",
   "keywords": [
     "xbrz",
