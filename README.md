@@ -40,7 +40,7 @@ function xbrzScale(
 ## Example usage
 
 ```js
-const { xbrzScale, xbrzColorFormat, xbrzConfig } = require('xbrz');
+const { xbrzScale, xbrzColorFormat, xbrzConfig } = require('xbrz-js');
 
 let config = xbrzConfig({
   // these are the defaults, xbrzConfig({}) or null would work as well
