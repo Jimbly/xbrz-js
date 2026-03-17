@@ -34,3 +34,5 @@ scale = 3;
 dst = new PNG({ width: src.width * scale, height: src.height * scale, colorType: PNG_RGBA });
 xbrzScale(scale, src.data, new Uint32Array(dst.data.buffer), 3, 3, xbrzColorFormat.argb, config);
 fs.writeFileSync(__dirname + '/x-out.png', PNG.sync.write(dst));
+
+console.log('Test complete.');
