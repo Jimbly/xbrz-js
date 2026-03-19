@@ -9,8 +9,7 @@ Notes
 * Some code semi-automatically converted to JavaScript by Codex (AI)
 * Only tested with `xbrzColorFormat.argb` (expects in-memory byte order of `R, G, B, A` or `B, G, R, A`)
 
-<img src="./test/test-in.png">
-<img src="./test/test-out.png">
+<img src="https://github.com/Jimbly/xbrz-js/blob/HEAD/test/test-in-6x-nearest.png"><img src="https://github.com/Jimbly/xbrz-js/blob/HEAD/test/test-out.png">
 
 ## API
 ```ts
@@ -23,6 +22,7 @@ type XbrzConfig = {
   centerDirectionBias: number;
   steepDirectionThreshold: number;
   dominantDirectionThreshold: number;
+  oobRead: 'auto' | 'duplicate' | 'transparent',
 };
 function xbrzConfig(opts?: Partial<XbrzConfig>): XbrzConfig;
 
@@ -48,6 +48,7 @@ let config = xbrzConfig({
   centerDirectionBias: 4,
   steepDirectionThreshold: 2.4,
   dominantDirectionThreshold: 3.6,
+  oobRead: 'auto',
 });
 
 let src = new Uint32Array([

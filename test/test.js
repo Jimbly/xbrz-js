@@ -9,11 +9,12 @@ let src = PNG.sync.read(fs.readFileSync(__dirname + '/test-in.png'));
 let scale = 6;
 let dst = new PNG({ width: src.width * scale, height: src.height * scale, colorType: PNG_RGBA });
 let config = xbrzConfig({
-  // all defaults, xbrzConfig({}) or null would work as well
+  // mostly defaults, xbrzConfig({}) or null would work as well
   equalColorTolerance: 30,
   centerDirectionBias: 4,
   steepDirectionThreshold: 2.4,
   dominantDirectionThreshold: 3.6,
+  oobRead: 'duplicate', // default of "auto" will be incorrect if this is a (primarily) opaque image
 });
 
 xbrzScale(scale, new Uint32Array(src.data.buffer), new Uint32Array(dst.data.buffer), src.width, src.height, xbrzColorFormat.argb, config);

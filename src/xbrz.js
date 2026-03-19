@@ -760,6 +760,8 @@ function xbrzScale(factor, src, trg, srcWidth, srcHeight, colFmt, cfg, yFirst, y
     const cfgUse = cfg || ScalerCfgDefault;
     const yFirstUse = yFirst == null ? 0 : yFirst;
     const yLastUse = yLast == null ? srcHeight : Math.min(yLast, srcHeight);
+    const oobReadUse = cfgUse.oobRead === 'auto' ? colFmt === ColorFormat.rgb ? 'duplicate' : 'transparent' : cfgUse.oobRead;
+    const oobReader = oobReadUse === 'duplicate' ? OobReaderDuplicate : OobReaderTransparent;
 
     assert.equal(SCALE_FACTOR_MAX, 6);
 
@@ -767,19 +769,19 @@ function xbrzScale(factor, src, trg, srcWidth, srcHeight, colFmt, cfg, yFirst, y
         case ColorFormat.rgb: {
             const scaler = makeScalerForFormat(factor, ColorFormat.rgb);
             if (!scaler) break;
-            scaleImage(scaler, ColorDistanceRGB, OobReaderDuplicate, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
+            scaleImage(scaler, ColorDistanceRGB, oobReader, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
             return;
         }
         case ColorFormat.argb: {
             const scaler = makeScalerForFormat(factor, ColorFormat.argb);
             if (!scaler) break;
-            scaleImage(scaler, ColorDistanceARGB, OobReaderTransparent, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
+            scaleImage(scaler, ColorDistanceARGB, oobReader, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
             return;
         }
         case ColorFormat.argbUnbuffered: {
             const scaler = makeScalerForFormat(factor, ColorFormat.argb);
             if (!scaler) break;
-            scaleImage(scaler, ColorDistanceUnbufferedARGB, OobReaderTransparent, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
+            scaleImage(scaler, ColorDistanceUnbufferedARGB, oobReader, src, trg, srcWidth, srcHeight, cfgUse, yFirstUse, yLastUse);
             return;
         }
     }
