@@ -9,9 +9,10 @@
     "upscale"
   ],
   "author": "Jimb Esser (https://github.com/Jimbly)",
+  "homepage": "https://github.com/Jimbly/xbrz-js#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jimbly/xbrz-js.git"
+    "url": "git+https://github.com/Jimbly/npm-publish.git"
   },
   "scripts": {
     "test": "cd test && node test.js"
